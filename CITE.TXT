@@ -1,0 +1,2 @@
+autounattend.xml bypass		from		https://raw.githubusercontent.com/GeovaniRgz/install-win11-unsupported-pc
+create_win_usb.sh		from		https://linuxconfig.org/creating-a-bootable-usb-for-windows-10-and-11-on-linux
