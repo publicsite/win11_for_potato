@@ -1,5 +1,8 @@
 #!/bin/sh
 
+OLD_UMASK="$(umask)"
+umask 0022
+
 #run with sudo
 #argv1 = the vanillaiso
 
@@ -36,3 +39,5 @@ cp -a "${PWD}/thirdparty/autounattend.xml" "${PWD}/win_iso_for_potato/"
 
 echo
 echo "Done. Now run createImage.sh"
+
+umask "${OLD_UMASK}"
