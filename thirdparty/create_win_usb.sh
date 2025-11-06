@@ -7,6 +7,10 @@
 # License: GPL-3.0
 # --------------------------------------------------------------
 # Input parameters: Path to the ISO file and USB block device location
+
+OLD_UMASK="$(umask)"
+umask 0022
+
 ISO_PATH=$1
 USB_BLOCK=$2
 
@@ -97,3 +101,5 @@ else
     echo "Aborted by user."
     exit 1
 fi
+
+umask "${OLD_UMASK}"
