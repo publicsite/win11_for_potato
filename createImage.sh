@@ -1,4 +1,8 @@
 #!/bin/sh
+
+OLD_UMASK="$(umask)"
+umask 0022
+
 if [ ! -f "$1" ]; then
 	echo "Arg1: The vanilla win ISO file"
 	exit
@@ -26,3 +30,6 @@ mkisofs \
   -udf \
   -o "${PWD}/${newISO}" \
   "${PWD}/win_iso_for_potato"
+
+  umask "${OLD_MASK}"
+  
